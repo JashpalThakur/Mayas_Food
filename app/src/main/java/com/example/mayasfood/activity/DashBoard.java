@@ -40,9 +40,9 @@ import kotlin.jvm.functions.Function2;
 import np.com.susanthapa.curved_bottom_navigation.CbnMenuItem;
 import np.com.susanthapa.curved_bottom_navigation.CurvedBottomNavigationView;
 
-public class DashBoard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class DashBoard extends AppCompatActivity {
 
-    private boolean isBackPressed = false;
+    /*private boolean isBackPressed = false;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
     ImageButton toolbar, close;
@@ -51,33 +51,66 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
 
     ArrayList<RecycleView_Model> recycleView_models = new ArrayList<>();
     ArrayList<RecycleView_Model> recycleView_models1 = new ArrayList<>();
-    ArrayList<RecycleView_Model> recycleView_models2 = new ArrayList<>();
+    ArrayList<RecycleView_Model> recycleView_models2 = new ArrayList<>();*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.frag_cont, new Dashboard_frag()).commit();
+
         CurvedBottomNavigationView cbn = findViewById(R.id.chip_nav);
-        CbnMenuItem dashboard = new CbnMenuItem(R.drawable.mdi___view_grid_outline, R.drawable.dashboard_anim, R.id.dashboard_frag);
-        CbnMenuItem search = new CbnMenuItem(R.drawable.icon_feather_search_r, R.drawable.search_anim, R.id.search_frag);
+        CbnMenuItem dashboard = new CbnMenuItem(R.drawable.mdi___view_grid_outline, R.drawable.dashboard_anim, new Dashboard_frag().getId());
+        CbnMenuItem search = new CbnMenuItem(R.drawable.icon_feather_search_r, R.drawable.search_anim, new Search_frag().getId());
         CbnMenuItem favorite = new CbnMenuItem(R.drawable.icon_feather_heart_red, R.drawable.avd_anim, R.id.favorite_frag);
         CbnMenuItem profile = new CbnMenuItem(R.drawable.icon_feather_user_red, R.drawable.profile_anim,R.id.profile_frag);
         CbnMenuItem[] navigation_items = {dashboard,search,favorite,profile};
         cbn.setMenuItems(navigation_items, 0);
 
+        cbn.setOnMenuItemClickListener(new Function2<CbnMenuItem, Integer, Unit>() {
+            @Override
+            public Unit invoke(CbnMenuItem cbnMenuItem, Integer integer) {
+
+                switch (cbn.getSelectedIndex()){
+
+                    case 0:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frag_cont, new Dashboard_frag()).commit();
+                        break;
+                    case 1:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frag_cont, new Search_frag()).commit();
+                        break;
+
+                }
+                return null;
+            }
+        });
+
+       /* cbn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (cbn.getSelectedIndex() == 0){
+
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frag_cont, new Dashboard_frag()).commit();
+                }
+                else if (cbn.getSelectedIndex() == 1){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frag_cont, new Search_frag()).commit();
+
+                }
+            }
+        });*/
 
         //cbn.setupWithNavController(Navigation.findNavController(this, R.id.frag_cont));
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.frag_cont, new Search_frag()).commit();
+            //getSupportFragmentManager().beginTransaction().replace(R.id.frag_cont, new Dashboard_frag()).commit();
 
 
 
-        drawerLayout = findViewById(R.id.drawer);
+        /*drawerLayout = findViewById(R.id.drawer);
         navigationView = findViewById(R.id.nav_view);
         navigationView.bringToFront();
         Menu menu = navigationView.getMenu();
-        toolbar = findViewById(R.id.toolbar);
+        //toolbar = findViewById(R.id.toolbar);
 
         RecyclerView recyclerView = findViewById(R.id.rv1);
         RecyclerView recyclerView2 = findViewById(R.id.rv2);
@@ -101,7 +134,7 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
         recyclerView3.setAdapter(recycleView_adapter_rc);
         recycleView_adapter.notifyDataSetChanged();
 
-        toolbar.setOnClickListener(new View.OnClickListener() {
+        /*toolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 drawerLayout.openDrawer(GravityCompat.START);
@@ -118,15 +151,15 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
                     }
                 });
             }
-        });
+        });*/
 
 
 
-        navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.homeNav);
+        //navigationView.setNavigationItemSelectedListener(this);
+       // navigationView.setCheckedItem(R.id.homeNav);*/
     }
 
-    private void setUpFoodModel(){
+    /*private void setUpFoodModel(){
         String[] foodName = getResources().getStringArray(R.array.Food_txt);
         String[] nameFood = getResources().getStringArray(R.array.Food_name);
         String[] foodop = getResources().getStringArray(R.array.Food_option);
@@ -165,22 +198,22 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
         },2000);
     }
 
-    @Override
+   /* @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()){
             //go to home
             case R.id.homeNav:
                 break;
-            //go to Registration
+
             case R.id.orderNav:
 
                 break;
-            //go to Login
+
             case R.id.profileNav:
 
                 break;
-            //Logout User
+
             case R.id.categoriesNav:
                 break;
 
@@ -194,6 +227,6 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
-    }
+    }*/
 
 }

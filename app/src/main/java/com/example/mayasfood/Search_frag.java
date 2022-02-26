@@ -16,6 +16,6 @@ class Search_frag extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_search_frag2, container, false);
+        return inflater.inflate(R.layout.fragment_search_frag, container, false);
     }
 }
