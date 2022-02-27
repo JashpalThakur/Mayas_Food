@@ -1,11 +1,15 @@
 package com.example.mayasfood.constants;
 
+import android.content.res.Resources;
 import android.graphics.Color;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mayasfood.R;
 
-public class Constants {
+import java.lang.reflect.Array;
 
+public class Constants {
 
     public static final String userNameError = "Enter a valid name";
     public static final String emptyFieldError = "Field can't be empty";

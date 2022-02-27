@@ -61,10 +61,10 @@ public class DashBoard extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.frag_cont, new Dashboard_frag()).commit();
 
         CurvedBottomNavigationView cbn = findViewById(R.id.chip_nav);
-        CbnMenuItem dashboard = new CbnMenuItem(R.drawable.mdi___view_grid_outline, R.drawable.dashboard_anim, new Dashboard_frag().getId());
-        CbnMenuItem search = new CbnMenuItem(R.drawable.icon_feather_search_r, R.drawable.search_anim, new Search_frag().getId());
-        CbnMenuItem favorite = new CbnMenuItem(R.drawable.icon_feather_heart_red, R.drawable.avd_anim, R.id.favorite_frag);
-        CbnMenuItem profile = new CbnMenuItem(R.drawable.icon_feather_user_red, R.drawable.profile_anim,R.id.profile_frag);
+        CbnMenuItem dashboard = new CbnMenuItem(R.drawable.mdi___view_grid_outline, R.drawable.dashboard_anim, 0);
+        CbnMenuItem search = new CbnMenuItem(R.drawable.icon_feather_search_r, R.drawable.search_anim, 1);
+        CbnMenuItem favorite = new CbnMenuItem(R.drawable.icon_feather_heart_red, R.drawable.avd_anim, 2);
+        CbnMenuItem profile = new CbnMenuItem(R.drawable.icon_feather_user_red, R.drawable.profile_anim,3);
         CbnMenuItem[] navigation_items = {dashboard,search,favorite,profile};
         cbn.setMenuItems(navigation_items, 0);
 
@@ -80,7 +80,12 @@ public class DashBoard extends AppCompatActivity {
                     case 1:
                         getSupportFragmentManager().beginTransaction().replace(R.id.frag_cont, new Search_frag()).commit();
                         break;
-
+                    case 2:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frag_cont, new Favorite_frag()).commit();
+                        break;
+                    case 3:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frag_cont, new Profile_frag()).commit();
+                        break;
                 }
                 return null;
             }
@@ -132,13 +137,13 @@ public class DashBoard extends AppCompatActivity {
         recyclerView.setAdapter(recycleView_adapter);
         recyclerView2.setAdapter(recycleView_adapter_pf);
         recyclerView3.setAdapter(recycleView_adapter_rc);
-        recycleView_adapter.notifyDataSetChanged();
+        recycleView_adapter.notifyDataSetChanged();*/
 
-        /*toolbar.setOnClickListener(new View.OnClickListener() {
+       /* toolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 drawerLayout.openDrawer(GravityCompat.START);
-                close = findViewById(R.id.close);
+                close = findViewById(R.id.close_frag);
 
                 close.setOnClickListener(new View.OnClickListener() {
 

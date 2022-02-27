@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.mayasfood.R;
@@ -34,7 +35,8 @@ public class Dashboard_frag extends Fragment implements NavigationView.OnNavigat
     private boolean isBackPressed = false;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
-    ImageButton toolbar, close_frag;
+    ImageButton toolbar;
+    ImageButton close;
     Fragment fragment;
 
     ArrayList<RecycleView_Model> recycleView_models = new ArrayList<>();
@@ -45,17 +47,17 @@ public class Dashboard_frag extends Fragment implements NavigationView.OnNavigat
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_dashboard_frag, container, false);
+        View v =  inflater.inflate(R.layout.fragment_dashboard_frag, container, false);
 
-        drawerLayout = view.findViewById(R.id.drawer_frag);
-        navigationView = view.findViewById(R.id.nav_view_frag);
+        drawerLayout = v.findViewById(R.id.drawer_frag);
+        navigationView = v.findViewById(R.id.nav_view_frag);
         navigationView.bringToFront();
         Menu menu = navigationView.getMenu();
-        toolbar = view.findViewById(R.id.toolbar_frag);
+        toolbar = v.findViewById(R.id.toolbar_frag);
 
-        RecyclerView recyclerView = view.findViewById(R.id.rv1);
-        RecyclerView recyclerView2 = view.findViewById(R.id.rv2);
-        RecyclerView recyclerView3 = view.findViewById(R.id.rv3);
+        RecyclerView recyclerView = v.findViewById(R.id.rv1);
+        RecyclerView recyclerView2 = v.findViewById(R.id.rv2);
+        RecyclerView recyclerView3 = v.findViewById(R.id.rv3);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         LinearLayoutManager layoutManager2 = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
@@ -80,18 +82,30 @@ public class Dashboard_frag extends Fragment implements NavigationView.OnNavigat
             @Override
             public void onClick(View view) {
                 drawerLayout.openDrawer(GravityCompat.START);
-                close_frag = view.findViewById(R.id.close_frag);
+
+                close = v.findViewById(R.id.close_frag);
+
+                close.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        drawerLayout.isDrawerOpen(GravityCompat.START);
+                        {
+                            drawerLayout.closeDrawer(GravityCompat.START);
+                        }
+                    }
+                });
 
             }
         });
 
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.homeNav);
-
-        return view;
+        setArrow();
+        return v;
     }
 
     private void setUpFoodModel(){
+
         String[] foodName = getResources().getStringArray(R.array.Food_txt);
         String[] nameFood = getResources().getStringArray(R.array.Food_name);
         String[] foodop = getResources().getStringArray(R.array.Food_option);
@@ -140,5 +154,19 @@ public class Dashboard_frag extends Fragment implements NavigationView.OnNavigat
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void setArrow(){
+
+        for (int i= 0 ; i <= navigationView.getMenu().size(); i++){
+
+            if (!(navigationView.getMenu().getItem(i).getIcon() == null)){
+                navigationView.getMenu().getItem(i).setActionView(R.layout.arrow);
+            }
+            else {
+                return;
+            }
+        }
+
     }
 }

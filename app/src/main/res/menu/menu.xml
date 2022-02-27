@@ -3,7 +3,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/homeNav"
-            android:title="Home"
+            android:title="@string/home"
             android:icon="@drawable/mdi___home_outline"/>
         <item
             android:id="@+id/orderNav"
