@@ -30,14 +30,14 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
-public class Dashboard_frag extends Fragment implements NavigationView.OnNavigationItemSelectedListener{
+public class Dashboard_frag extends Fragment {
 
     private boolean isBackPressed = false;
-    NavigationView navigationView;
-    DrawerLayout drawerLayout;
-    ImageButton toolbar;
-    ImageButton close;
-    Fragment fragment;
+   // NavigationView navigationView;
+    //DrawerLayout drawerLayout;
+   // ImageButton toolbar;
+  //  ImageButton close;
+   // Fragment fragment;
 
     ArrayList<RecycleView_Model> recycleView_models = new ArrayList<>();
     ArrayList<RecycleView_Model> recycleView_models1 = new ArrayList<>();
@@ -49,11 +49,11 @@ public class Dashboard_frag extends Fragment implements NavigationView.OnNavigat
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_dashboard_frag, container, false);
 
-        drawerLayout = v.findViewById(R.id.drawer_frag);
-        navigationView = v.findViewById(R.id.nav_view_frag);
-        navigationView.bringToFront();
-        Menu menu = navigationView.getMenu();
-        toolbar = v.findViewById(R.id.toolbar_frag);
+       // drawerLayout = v.findViewById(R.id.drawer_frag);
+      //  navigationView = v.findViewById(R.id.nav_view_frag);
+      //  navigationView.bringToFront();
+      //  Menu menu = navigationView.getMenu();
+       // toolbar = v.findViewById(R.id.toolbar_frag);
 
         RecyclerView recyclerView = v.findViewById(R.id.rv1);
         RecyclerView recyclerView2 = v.findViewById(R.id.rv2);
@@ -78,7 +78,7 @@ public class Dashboard_frag extends Fragment implements NavigationView.OnNavigat
 
 
 
-        toolbar.setOnClickListener(new View.OnClickListener() {
+      /*  toolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 drawerLayout.openDrawer(GravityCompat.START);
@@ -96,11 +96,12 @@ public class Dashboard_frag extends Fragment implements NavigationView.OnNavigat
                 });
 
             }
-        });
+        });*/
 
-        navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.homeNav);
-        setArrow();
+        //navigationView.setNavigationItemSelectedListener(this);
+        //Constants.setArrow(navigationView);
+       // navigationView.setCheckedItem(R.id.homeNav);
+
         return v;
     }
 
@@ -125,7 +126,7 @@ public class Dashboard_frag extends Fragment implements NavigationView.OnNavigat
         }
     }
 
-    @Override
+    /*@Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()){
@@ -154,19 +155,7 @@ public class Dashboard_frag extends Fragment implements NavigationView.OnNavigat
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
-    }
+    }*/
 
-    private void setArrow(){
 
-        for (int i= 0 ; i <= navigationView.getMenu().size(); i++){
-
-            if (!(navigationView.getMenu().getItem(i).getIcon() == null)){
-                navigationView.getMenu().getItem(i).setActionView(R.layout.arrow);
-            }
-            else {
-                return;
-            }
-        }
-
-    }
 }

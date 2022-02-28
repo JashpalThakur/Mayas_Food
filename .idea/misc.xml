@@ -7,11 +7,15 @@
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout-normal/activity_dash_board.xml" value="0.25" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout-sw600dp/activity_dash_board.xml" value="0.184375" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout-xlarge/activity_dash_board.xml" value="0.23229166666666667" />
-        <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/activity_dash_board.xml" value="1.6464285714285714" />
+        <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/activity_dash_board.xml" value="0.39072847682119205" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/arrow.xml" value="0.20179563916203505" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/fragment_dashboard_frag.xml" value="0.20179563916203505" />
+        <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/fragment_favorite_frag.xml" value="0.20179563916203505" />
+        <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/fragment_profile_frag.xml" value="0.20179563916203505" />
+        <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/fragment_search_frag.xml" value="0.20179563916203505" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/header.xml" value="0.20179563916203505" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/menu/menu.xml" value="0.20179563916203505" />
+        <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/menu/toolbar.xml" value="0.20179563916203505" />
         <entry key="app/src/main/res/drawable/avd_anim.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable/black_back.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable/custom_button.xml" value="0.213" />

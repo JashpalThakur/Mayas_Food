@@ -1,7 +1,9 @@
 package com.example.mayasfood.activity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -10,6 +12,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -40,31 +43,29 @@ import kotlin.jvm.functions.Function2;
 import np.com.susanthapa.curved_bottom_navigation.CbnMenuItem;
 import np.com.susanthapa.curved_bottom_navigation.CurvedBottomNavigationView;
 
-public class DashBoard extends AppCompatActivity {
+public class DashBoard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
-    /*private boolean isBackPressed = false;
+    private boolean isBackPressed = false;
+    Toolbar toolbar_const;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
-    ImageButton toolbar, close;
-    Fragment fragment;
-
-
-    ArrayList<RecycleView_Model> recycleView_models = new ArrayList<>();
-    ArrayList<RecycleView_Model> recycleView_models1 = new ArrayList<>();
-    ArrayList<RecycleView_Model> recycleView_models2 = new ArrayList<>();*/
+    ImageButton close;
+    ActionBarDrawerToggle actionBarDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
 
+        setUpToolbar();
+
         getSupportFragmentManager().beginTransaction().replace(R.id.frag_cont, new Dashboard_frag()).commit();
 
         CurvedBottomNavigationView cbn = findViewById(R.id.chip_nav);
         CbnMenuItem dashboard = new CbnMenuItem(R.drawable.mdi___view_grid_outline, R.drawable.dashboard_anim, 0);
-        CbnMenuItem search = new CbnMenuItem(R.drawable.icon_feather_search_r, R.drawable.search_anim, 1);
-        CbnMenuItem favorite = new CbnMenuItem(R.drawable.icon_feather_heart_red, R.drawable.avd_anim, 2);
-        CbnMenuItem profile = new CbnMenuItem(R.drawable.icon_feather_user_red, R.drawable.profile_anim,3);
+        CbnMenuItem search = new CbnMenuItem(R.drawable.icon_feather_search_r, R.drawable.search_anim, 0);
+        CbnMenuItem favorite = new CbnMenuItem(R.drawable.icon_feather_heart_red, R.drawable.avd_anim, 0);
+        CbnMenuItem profile = new CbnMenuItem(R.drawable.icon_feather_user_red, R.drawable.profile_anim,0);
         CbnMenuItem[] navigation_items = {dashboard,search,favorite,profile};
         cbn.setMenuItems(navigation_items, 0);
 
@@ -91,6 +92,7 @@ public class DashBoard extends AppCompatActivity {
             }
         });
 
+
        /* cbn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,83 +107,83 @@ public class DashBoard extends AppCompatActivity {
             }
         });*/
 
-        //cbn.setupWithNavController(Navigation.findNavController(this, R.id.frag_cont));
 
-            //getSupportFragmentManager().beginTransaction().replace(R.id.frag_cont, new Dashboard_frag()).commit();
+    }
 
+    public void setUpToolbar(){
 
-
-        /*drawerLayout = findViewById(R.id.drawer);
+        drawerLayout = findViewById(R.id.drawer);
         navigationView = findViewById(R.id.nav_view);
         navigationView.bringToFront();
         Menu menu = navigationView.getMenu();
-        //toolbar = findViewById(R.id.toolbar);
+        toolbar_const = findViewById(R.id.toolbar_const);
+        setSupportActionBar(toolbar_const);
+        navigationView.setNavigationItemSelectedListener(this);
+        Constants.setArrow(navigationView);
+        navigationView.setCheckedItem(R.id.homeNav);
 
-        RecyclerView recyclerView = findViewById(R.id.rv1);
-        RecyclerView recyclerView2 = findViewById(R.id.rv2);
-        RecyclerView recyclerView3 = findViewById(R.id.rv3);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout,toolbar_const, R.string.app_name, R.string.app_name);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        LinearLayoutManager layoutManager2 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        LinearLayoutManager layoutManager3 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView2.setLayoutManager(layoutManager2);
-        recyclerView3.setLayoutManager(layoutManager3);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.group_8);
 
-        setUpFoodModel();
-
-
-        RecycleView_Adapter_C recycleView_adapter = new RecycleView_Adapter_C(this ,recycleView_models);
-        RecycleView_Adapter_PF recycleView_adapter_pf = new RecycleView_Adapter_PF(this, recycleView_models1);
-        RecycleView_Adapter_RC recycleView_adapter_rc = new RecycleView_Adapter_RC(this, recycleView_models2);
-        recyclerView.setAdapter(recycleView_adapter);
-        recyclerView2.setAdapter(recycleView_adapter_pf);
-        recyclerView3.setAdapter(recycleView_adapter_rc);
-        recycleView_adapter.notifyDataSetChanged();*/
-
-       /* toolbar.setOnClickListener(new View.OnClickListener() {
+        drawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
             @Override
-            public void onClick(View view) {
-                drawerLayout.openDrawer(GravityCompat.START);
+            public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
+                actionBarDrawerToggle.syncState();
+                getSupportActionBar().setHomeAsUpIndicator(R.drawable.group_8);
+            }
+
+            @Override
+            public void onDrawerOpened(@NonNull View drawerView) {
+                actionBarDrawerToggle.syncState();
+                getSupportActionBar().setHomeAsUpIndicator(R.drawable.group_8);
+
                 close = findViewById(R.id.close_frag);
 
                 close.setOnClickListener(new View.OnClickListener() {
-
                     @Override
                     public void onClick(View view) {
-
-                        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+                        drawerLayout.isDrawerOpen(GravityCompat.START);
+                        {
                             drawerLayout.closeDrawer(GravityCompat.START);
                         }
                     }
                 });
             }
-        });*/
 
+            @Override
+            public void onDrawerClosed(@NonNull View drawerView) {
+                actionBarDrawerToggle.syncState();
+                getSupportActionBar().setHomeAsUpIndicator(R.drawable.group_8);
+            }
 
-
-        //navigationView.setNavigationItemSelectedListener(this);
-       // navigationView.setCheckedItem(R.id.homeNav);*/
+            @Override
+            public void onDrawerStateChanged(int newState) {
+                actionBarDrawerToggle.syncState();
+                getSupportActionBar().setHomeAsUpIndicator(R.drawable.group_8);
+            }
+        });
     }
 
-    /*private void setUpFoodModel(){
-        String[] foodName = getResources().getStringArray(R.array.Food_txt);
-        String[] nameFood = getResources().getStringArray(R.array.Food_name);
-        String[] foodop = getResources().getStringArray(R.array.Food_option);
-        String[] foodprice = getResources().getStringArray(R.array.Food_price);
-        String[] NameFood = getResources().getStringArray(R.array.Name_Food);
-        String[] Food_op = getResources().getStringArray(R.array.Food_op);
-        String[] Food_rate = getResources().getStringArray(R.array.Food_rate);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar, menu);
+        return true;
+    }
 
-        for(int i = 0; i<foodName.length; i++) {
-            recycleView_models.add(new RecycleView_Model(foodName[i], Constants.foodImage[i]));
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.notify){
+            Toast.makeText(getApplicationContext(), "Notifications", Toast.LENGTH_SHORT).show();
         }
-        for(int i = 0; i<nameFood.length; i++){
-            recycleView_models1.add(new RecycleView_Model(nameFood[i], foodop[i], foodprice[i], Constants.imgFood[i]));
-          }
-         for (int i =0; i<NameFood.length; i++){
-            recycleView_models2.add(new RecycleView_Model(NameFood[i], Food_op[i], Food_rate[i], Constants.foodimg[i]));
+        else if (id == R.id.setting){
+            Toast.makeText(getApplicationContext(), "Setting", Toast.LENGTH_SHORT).show();
         }
+        return true;
     }
 
     @Override
@@ -203,7 +205,7 @@ public class DashBoard extends AppCompatActivity {
         },2000);
     }
 
-   /* @Override
+    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()){
@@ -232,6 +234,6 @@ public class DashBoard extends AppCompatActivity {
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
-    }*/
+    }
 
 }

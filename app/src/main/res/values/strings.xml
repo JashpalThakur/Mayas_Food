@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Mayas Food</string>
     <string name="get_start">Get Start</string>
+    <string name="no_title"> </string>
     <string-array name="Food_txt">
         <item>Breakfast</item>
         <item>Porridge</item>
