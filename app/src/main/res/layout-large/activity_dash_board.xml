@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/drawer"
     android:background="@drawable/location"
     android:layout_height="match_parent"
     tools:context=".activity.DashBoard">
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view_frag"
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
@@ -76,12 +77,14 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="8dp"
                 android:paddingStart="8dp"
+                android:paddingEnd="8dp"
                 app:title=""
                 app:titleTextColor="#00FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:navigationIcon="@drawable/group_8" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
