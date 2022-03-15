@@ -30,6 +30,7 @@ import com.example.mayasfood.fragments.Dashboard_frag;
 import com.example.mayasfood.fragments.Favorite_frag;
 import com.example.mayasfood.fragments.Profile_frag;
 import com.example.mayasfood.fragments.Search_frag;
+import com.example.mayasfood.functions.Functions;
 import com.example.mayasfood.recycleView.recycleViewModel.RecycleView_Model;
 import com.example.mayasfood.recycleView.rv_adapter.RecycleView_Adapter_C;
 import com.example.mayasfood.recycleView.rv_adapter.RecycleView_Adapter_PF;
@@ -119,7 +120,7 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
         toolbar_const = findViewById(R.id.toolbar_const);
         setSupportActionBar(toolbar_const);
         navigationView.setNavigationItemSelectedListener(this);
-        Constants.setArrow(navigationView);
+        Functions.setArrow(navigationView);
         navigationView.setCheckedItem(R.id.homeNav);
 
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout,toolbar_const, R.string.app_name, R.string.app_name);

@@ -22,20 +22,4 @@ public class Constants {
     public static int[] imgFood = {R.drawable.do_011318_alc_kapoleichinese_lt001_file_shrimp, R.drawable.jackfruit_bowl, R.drawable.png_clipart_seafood__1_};
     public static int[] foodimg = {R.drawable.pngwing_com,R.drawable.png_clipart_vegetarian_cuisine_breakfast_spring__1_, R.drawable.unnamed};
 
-    public static void setArrow(NavigationView navigationView){
-
-        for (int i = 0; i < navigationView.getMenu().size(); i++){
-
-            int size = navigationView.getMenu().size();
-
-            Log.d("size" , String.valueOf(size));
-
-            if (!(navigationView.getMenu().getItem(i).getTitle() == null)){
-                navigationView.getMenu().getItem(i).setActionView(R.layout.arrow);
-            }
-            else {
-                return;
-            }
-        }
-    }
 }

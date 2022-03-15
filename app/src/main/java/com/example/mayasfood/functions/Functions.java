@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.CountDownTimer;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.mayasfood.R;
 import com.example.mayasfood.constants.Constants;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
@@ -116,6 +118,23 @@ public class Functions {
                 }
             }
         });
+    }
+
+    public static void setArrow(NavigationView navigationView){
+
+        for (int i = 0; i < navigationView.getMenu().size(); i++){
+
+            int size = navigationView.getMenu().size();
+
+            Log.d("size" , String.valueOf(size));
+
+            if (!(navigationView.getMenu().getItem(i).getTitle() == null)){
+                navigationView.getMenu().getItem(i).setActionView(R.layout.arrow);
+            }
+            else {
+                return;
+            }
+        }
     }
 
 }
