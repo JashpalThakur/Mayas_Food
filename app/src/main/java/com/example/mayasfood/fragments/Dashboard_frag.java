@@ -1,8 +1,10 @@
 package com.example.mayasfood.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -21,6 +23,7 @@ import android.widget.Toast;
 
 import com.example.mayasfood.R;
 import com.example.mayasfood.activity.DashBoard;
+import com.example.mayasfood.activity.singleItem;
 import com.example.mayasfood.constants.Constants;
 import com.example.mayasfood.recycleView.recycleViewModel.RecycleView_Model;
 import com.example.mayasfood.recycleView.rv_adapter.RecycleView_Adapter_C;
@@ -38,7 +41,6 @@ public class Dashboard_frag extends Fragment {
    // ImageButton toolbar;
   //  ImageButton close;
    // Fragment fragment;
-
     ArrayList<RecycleView_Model> recycleView_models = new ArrayList<>();
     ArrayList<RecycleView_Model> recycleView_models1 = new ArrayList<>();
     ArrayList<RecycleView_Model> recycleView_models2 = new ArrayList<>();
@@ -48,6 +50,7 @@ public class Dashboard_frag extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_dashboard_frag, container, false);
+
 
        // drawerLayout = v.findViewById(R.id.drawer_frag);
       //  navigationView = v.findViewById(R.id.nav_view_frag);
@@ -75,7 +78,6 @@ public class Dashboard_frag extends Fragment {
         recyclerView2.setAdapter(recycleView_adapter_pf);
         recyclerView3.setAdapter(recycleView_adapter_rc);
         recycleView_adapter.notifyDataSetChanged();
-
 
 
       /*  toolbar.setOnClickListener(new View.OnClickListener() {

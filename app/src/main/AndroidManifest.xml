@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".activity.CheckOut"
+            android:exported="false" />
+        <activity
+            android:name=".activity.singleItem"
+            android:exported="false" />
+        <activity
             android:name=".activity.OTP"
             android:exported="false" />
         <activity

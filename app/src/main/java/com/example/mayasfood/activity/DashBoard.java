@@ -24,6 +24,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.mayasfood.MainActivity;
 import com.example.mayasfood.R;
 import com.example.mayasfood.constants.Constants;
 import com.example.mayasfood.fragments.Dashboard_frag;
@@ -215,7 +216,8 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
                 break;
 
             case R.id.orderNav:
-
+                startActivity(new Intent(DashBoard.this, CheckOut.class));
+                finish();
                 break;
 
             case R.id.profileNav:
