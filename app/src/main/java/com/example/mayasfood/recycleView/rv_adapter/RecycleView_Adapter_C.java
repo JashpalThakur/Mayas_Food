@@ -41,6 +41,7 @@ public class RecycleView_Adapter_C extends RecyclerView.Adapter<RecycleView_Adap
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         //Assigning values to the views we created
+        final RecycleView_Model temp = foodModels.get(position);
 
         holder.name.setText(foodModels.get(position).getFoodName());
         holder.imageView.setImageResource(foodModels.get(position).getFoodImg());
