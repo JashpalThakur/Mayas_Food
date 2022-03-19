@@ -74,9 +74,11 @@ public class Dashboard_frag extends Fragment {
         RecycleView_Adapter_C recycleView_adapter = new RecycleView_Adapter_C(getActivity() ,recycleView_models);
         RecycleView_Adapter_PF recycleView_adapter_pf = new RecycleView_Adapter_PF(getActivity(), recycleView_models1);
         RecycleView_Adapter_RC recycleView_adapter_rc = new RecycleView_Adapter_RC(getActivity(), recycleView_models2);
+
         recyclerView.setAdapter(recycleView_adapter);
         recyclerView2.setAdapter(recycleView_adapter_pf);
         recyclerView3.setAdapter(recycleView_adapter_rc);
+
         recycleView_adapter.notifyDataSetChanged();
 
 

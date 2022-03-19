@@ -18,6 +18,10 @@ public class RecycleView_Model {
         this.foodImg = foodImg;
     }
 
+    public RecycleView_Model(int foodImg) {
+        this.foodImg = foodImg;
+    }
+
     public String getFoodName() {
         return foodName;
     }

@@ -7,6 +7,11 @@
         <item>Porridge</item>
         <item>Seafood</item>
         <item>Healthy</item>
+        <item>Sides</item>
+        <item>Appetizers</item>
+        <item>Lunch &amp; Dinner</item>
+        <item>Pasta</item>
+        <item>Soup</item>
     </string-array>
     <string-array name="Food_name">
         <item>Pepper Shrimp</item>

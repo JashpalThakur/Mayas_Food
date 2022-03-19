@@ -42,9 +42,10 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
+                android:id="@+id/button2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginStart="108dp"
+                android:layout_marginStart="100dp"
                 android:background="@drawable/custom_button2"
                 android:text="S"
                 android:textAllCaps="true"
@@ -58,7 +59,6 @@
                 android:id="@+id/button"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginStart="172dp"
                 android:layout_marginTop="48dp"
                 android:background="@drawable/custom_button2"
                 android:text="L"
@@ -66,13 +66,14 @@
                 android:textColor="@color/white"
                 android:textSize="28dp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/single_foodimg" />
 
             <Button
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginEnd="112dp"
+                android:layout_marginEnd="100dp"
                 android:background="@drawable/custom_button2"
                 android:text="M"
                 android:textAllCaps="true"
@@ -104,20 +105,24 @@
                 app:layout_constraintTop_toBottomOf="@+id/button" />
 
             <TextView
+                android:id="@+id/no_of_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="64dp"
                 android:fontFamily="@font/ntailu"
                 android:text="02"
+                android:inputType="number"
+                android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/textView21"
+                app:layout_constraintEnd_toEndOf="@+id/textView21"
                 app:layout_constraintStart_toStartOf="@+id/textView21"
                 app:layout_constraintTop_toTopOf="@+id/textView21"
                 app:layout_constraintVertical_bias="0.48" />
 
             <TextView
+                android:id="@+id/add_item"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="20dp"
@@ -131,6 +136,7 @@
                 app:layout_constraintTop_toTopOf="@+id/textView21" />
 
             <TextView
+                android:id="@+id/minus_item"
                 android:layout_width="10dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="40dp"
@@ -185,7 +191,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/food_des" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
+                android:id="@+id/toppings_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16sp"
@@ -213,7 +219,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/recyclerView"
+                app:layout_constraintTop_toBottomOf="@id/toppings_rv"
                 tools:layout_editor_absoluteY="7dp" />
 
             <ImageView

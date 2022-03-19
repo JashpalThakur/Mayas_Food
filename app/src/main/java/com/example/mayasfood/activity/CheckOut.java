@@ -20,8 +20,7 @@ public class CheckOut extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+
         super.onBackPressed();
-
-
     }
 }

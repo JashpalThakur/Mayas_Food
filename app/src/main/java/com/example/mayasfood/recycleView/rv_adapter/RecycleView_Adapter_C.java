@@ -1,6 +1,9 @@
 package com.example.mayasfood.recycleView.rv_adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mayasfood.R;
@@ -21,6 +25,7 @@ import java.util.Locale;
 
 public class RecycleView_Adapter_C extends RecyclerView.Adapter<RecycleView_Adapter_C.MyViewHolder> {
 
+    int click = 1;
     Context context;
     ArrayList<RecycleView_Model> foodModels;
 
@@ -45,6 +50,29 @@ public class RecycleView_Adapter_C extends RecyclerView.Adapter<RecycleView_Adap
 
         holder.name.setText(foodModels.get(position).getFoodName());
         holder.imageView.setImageResource(foodModels.get(position).getFoodImg());
+
+        ColorStateList color = holder.cardView.getCardBackgroundColor();
+
+        holder.name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+                if (click == 1){
+
+                    holder.cardView.setCardBackgroundColor(Color.RED);
+                    holder.name.setTextColor(Color.WHITE);
+                    click = 2;
+                }
+                else if (click == 2){
+
+                    holder.cardView.setCardBackgroundColor(color);
+                    holder.name.setTextColor(Color.BLACK);
+                    click = 1;
+                }
+            }
+        });
     }
 
     @Override
@@ -56,6 +84,7 @@ public class RecycleView_Adapter_C extends RecyclerView.Adapter<RecycleView_Adap
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         //grabbing the views from rv_column.xml
 
+        CardView cardView;
         ImageView imageView;
         TextView name;
 
@@ -64,6 +93,7 @@ public class RecycleView_Adapter_C extends RecyclerView.Adapter<RecycleView_Adap
 
             imageView = itemView.findViewById(R.id.foodimage);
             name = itemView.findViewById(R.id.foodname);
+            cardView = itemView.findViewById(R.id.cat_card);
         }
     }
 }

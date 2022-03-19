@@ -4,20 +4,24 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/drawable/dashboard_anim.xml" value="0.2335" />
+        <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.239" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout-large/activity_dash_board.xml" value="0.20179563916203505" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout-normal/activity_dash_board.xml" value="0.25" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout-sw600dp/activity_dash_board.xml" value="0.184375" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout-xlarge/activity_dash_board.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/activity_check_out.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/activity_dash_board.xml" value="0.39072847682119205" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/activity_single_item.xml" value="0.25" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/arrow.xml" value="0.20179563916203505" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/checkout.xml" value="0.20521590423257802" />
+        <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/food_categories_rv.xml" value="0.4" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/fragment_dashboard_frag.xml" value="0.20179563916203505" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/fragment_favorite_frag.xml" value="0.20179563916203505" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/fragment_profile_frag.xml" value="0.20179563916203505" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/fragment_search_frag.xml" value="0.20179563916203505" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/header.xml" value="0.20179563916203505" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/single_item.xml" value="0.20521590423257802" />
+        <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/layout/topping_rv.xml" value="0.536" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/menu/menu.xml" value="0.20179563916203505" />
         <entry key="..\:/Users/91881/AndroidStudioProjects/Mayas_Food/app/src/main/res/menu/toolbar.xml" value="0.20179563916203505" />
         <entry key="app/src/main/res/drawable/avd_anim.xml" value="0.2125" />
