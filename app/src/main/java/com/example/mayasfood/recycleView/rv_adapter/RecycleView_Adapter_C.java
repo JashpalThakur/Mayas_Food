@@ -57,8 +57,6 @@ public class RecycleView_Adapter_C extends RecyclerView.Adapter<RecycleView_Adap
             @Override
             public void onClick(View view) {
 
-
-
                 if (click == 1){
 
                     holder.cardView.setCardBackgroundColor(Color.RED);

@@ -41,7 +41,7 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/ntailu"
         android:text="My"
-        android:textColor="#010313"
+        android:textColor="@color/Main_Heading"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +54,7 @@
         android:layout_marginStart="24dp"
         android:fontFamily="@font/ntailu"
         android:text="Selected Food"
-        android:textColor="#010313"
+        android:textColor="@color/Main_Heading"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
         android:layout_marginTop="12dp"
         android:fontFamily="@font/sail"
         android:text="My favorite food"
-        android:textColor="#B5B5BB"
+        android:textColor="@color/Get_start_subtitle"
         android:textSize="23sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView28" />
@@ -107,7 +107,7 @@
         android:fontFamily="@font/ntailu"
         android:text="Apply"
         android:textAllCaps="false"
-        android:textColor="@color/white"
+        android:textColor="@color/Button_text"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/editText2"
@@ -122,7 +122,7 @@
         android:layout_marginTop="32dp"
         android:fontFamily="@font/ntailu"
         android:text="Subtotal"
-        android:textColor="#B5B5BB"
+        android:textColor="@color/Get_start_subtitle"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -135,7 +135,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="44dp"
         android:text="$6"
-        android:textColor="#B5B5BB"
+        android:textColor="@color/Get_start_subtitle"
         android:textSize="16sp"
         android:fontFamily="@font/ntailu"
         app:layout_constraintEnd_toEndOf="parent"
@@ -151,7 +151,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/ntailu"
         android:text="All Tax"
-        android:textColor="#B5B5BB"
+        android:textColor="@color/Get_start_subtitle"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -163,7 +163,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
         android:text="-"
-        android:textColor="#696971"
+        android:textColor="@color/Get_start_subtitle"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -178,7 +178,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="16dp"
         android:text="Total"
-        android:textColor="#B5B5BB"
+        android:textColor="@color/Get_start_subtitle"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -191,7 +191,7 @@
         android:layout_marginEnd="44dp"
         android:fontFamily="@font/ntailu"
         android:text="$6"
-        android:textColor="@color/black"
+        android:textColor="@color/Main_Heading"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -207,7 +207,7 @@
         android:layout_marginTop="22dp"
         android:fontFamily="@font/ntailu"
         android:text="Payment Method"
-        android:textColor="@color/black"
+        android:textColor="@color/Main_Heading"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -231,7 +231,7 @@
             android:checked="true"
             android:fontFamily="@font/ntailu"
             android:text="Cash on Pickup"
-            android:textColor="@color/black" />
+            android:textColor="@color/Main_Heading" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -240,7 +240,7 @@
             android:buttonTint="#e80937"
             android:fontFamily="@font/ntailu"
             android:text="UPI"
-            android:textColor="@color/black" />
+            android:textColor="@color/Main_Heading" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -249,7 +249,7 @@
             android:buttonTint="#e80937"
             android:fontFamily="@font/ntailu"
             android:text="Card"
-            android:textColor="@color/black" />
+            android:textColor="@color/Main_Heading" />
     </RadioGroup>
 
     <Button
@@ -259,7 +259,7 @@
         android:fontFamily="@font/sail"
         android:text="Place Order"
         android:textAllCaps="false"
-        android:textColor="@color/white"
+        android:textColor="@color/Button_text"
         android:textSize="24dp"
         android:layout_marginTop="16dp"
         android:paddingStart="32dp"

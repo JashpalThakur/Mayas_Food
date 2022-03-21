@@ -66,6 +66,9 @@ public class OTP extends AppCompatActivity {
         resend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                resend.setVisibility(View.GONE);
+                resend_txt.setVisibility(View.VISIBLE);
+                timer.setVisibility(View.VISIBLE);
                 countdownTimer();
             }
         });
